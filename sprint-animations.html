@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#111827">
+  <meta name="description" content="Learn how to make a Roblox sprint system with custom idle, walk, and sprint animations.">
+  <title>Custom Sprint Animations — CoolNoobDev</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">CN</span><span>CoolNoob<span class="brand-accent">Dev</span></span></a><nav aria-label="Main navigation"><a href="index.html#tutorials">Tutorials</a><a href="index.html#about">About</a><a class="nav-button" href="https://www.youtube.com/" target="_blank" rel="noreferrer">YouTube ↗</a></nav></header>
+  <main class="tutorial-page">
+    <a class="back-link" href="index.html">← <span>Back to tutorials</span></a>
+    <p class="eyebrow">ROBLOX STUDIO • ANIMATION</p>
+    <h1 class="tutorial-title">Custom Sprint<br><span>Animations</span></h1>
+    <p class="tutorial-intro">Create a sprint system that switches between idle, walk, and sprint animations. Hold <kbd>Shift</kbd> or <kbd>Ctrl</kbd> to sprint.</p>
+    <div class="tutorial-banner"><div class="banner-speed">➜</div><div><span class="visual-tag">MOVEMENT SYSTEM</span><p>WALK <b>16</b><span>→</span> SPRINT <b>24</b></p><small>SHIFT / CTRL</small></div></div>
+    <section class="article-section"><h2>1. Add the script</h2><p>In Roblox Studio, add a <strong>LocalScript</strong> to <strong>StarterPlayer → StarterPlayerScripts</strong>. Replace the animation IDs below with your own uploaded animation IDs. The animations must be owned by you or shared with the experience.</p>
+      <div class="code-toolbar"><span>LocalScript · SprintAnimations</span><button id="copyCode" type="button">Copy code</button></div>
+      <pre><code id="codeBlock">-- SERVICES
+local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
+
+-- PLAYER
+local player = Players.LocalPlayer
+
+-- CONFIG
+local WALK_SPEED = 16
+local SPRINT_SPEED = 24
+local SPRINT_KEYS = {
+    [Enum.KeyCode.LeftShift] = true,
+    [Enum.KeyCode.LeftControl] = true,
+}
+
+-- Replace these with your animation IDs
+local ANIMATION_IDS = {
+    Idle = "rbxassetid://0",
+    Walk = "rbxassetid://0",
+    Sprint = "rbxassetid://0",
+}
+
+local function setupCharacter(character)
+    local humanoid = character:WaitForChild("Humanoid")
+    local animator = humanoid:WaitForChild("Animator")
+    local tracks = {}
+
+    for name, id in pairs(ANIMATION_IDS) do
+        local animation = Instance.new("Animation")
+        animation.AnimationId = id
+        tracks[name] = animator:LoadAnimation(animation)
+        tracks[name].Looped = true
+    end
+
+    local sprinting = false
+
+    local function updateAnimation()
+        if humanoid.Health <= 0 then return end
+
+        local moving = humanoid.MoveDirection.Magnitude > 0.05
+        local nextTrack
+
+        if not moving then
+            nextTrack = tracks.Idle
+        elseif sprinting then
+            nextTrack = tracks.Sprint
+        else
+            nextTrack = tracks.Walk
+        end
+
+        for _, track in pairs(tracks) do
+            if track ~= nextTrack and track.IsPlaying then
+                track:Stop(0.2)
+            end
+        end
+
+        if nextTrack and not nextTrack.IsPlaying then
+            nextTrack:Play(0.2)
+        end
+    end
+
+    local function setSprinting(value)
+        sprinting = value
+        humanoid.WalkSpeed = sprinting and SPRINT_SPEED or WALK_SPEED
+        updateAnimation()
+    end
+
+    local beganConnection = UserInputService.InputBegan:Connect(function(input, processed)
+        if not processed and SPRINT_KEYS[input.KeyCode] then
+            setSprinting(true)
+        end
+    end)
+
+    local endedConnection = UserInputService.InputEnded:Connect(function(input)
+        if SPRINT_KEYS[input.KeyCode] then
+            setSprinting(false)
+        end
+    end)
+
+    local runningConnection = humanoid.Running:Connect(updateAnimation)
+    local diedConnection = humanoid.Died:Connect(function()
+        beganConnection:Disconnect()
+        endedConnection:Disconnect()
+        runningConnection:Disconnect()
+        for _, track in pairs(tracks) do
+            track:Stop()
+        end
+    end)
+
+    humanoid.WalkSpeed = WALK_SPEED
+    updateAnimation()
+end
+
+if player.Character then
+    setupCharacter(player.Character)
+end
+player.CharacterAdded:Connect(setupCharacter)</code></pre>
+    </section>
+    <section class="article-section tips"><h2>2. Set your animation IDs</h2><p>Find each animation in Creator Dashboard and copy its asset ID. Replace the <code>0</code> in each <code>rbxassetid://0</code> value. Set the animations to loop in the Animation Editor too, and make sure their priority is suitable (usually <strong>Movement</strong> for walk and sprint).</p><h2>3. Try it in Play mode</h2><p>Press Play, then hold Shift or Ctrl. If the default Roblox animation overrides yours, check that your animation was made for the rig type in your game (R6 or R15) and that the animation is permitted for the experience.</p><p class="note-box"><strong>Note:</strong> This starter version uses keyboard controls. A mobile sprint button can be added separately.</p></section>
+    <a class="back-link bottom-back" href="index.html">← <span>Back to all tutorials</span></a>
+  </main>
+  <footer><a class="brand footer-brand" href="index.html"><span class="brand-mark">CN</span><span>CoolNoob<span class="brand-accent">Dev</span></span></a><span>© <span id="year">2026</span> CoolNoobDev</span><a href="mailto:hello@coolnoobdev.com">Contact ↗</a></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('copyCode').addEventListener('click',async function(){const button=this;try{await navigator.clipboard.writeText(document.getElementById('codeBlock').innerText);button.textContent='Copied!';setTimeout(()=>button.textContent='Copy code',1600)}catch{button.textContent='Select code to copy';}});</script>
+</body>
+</html>
