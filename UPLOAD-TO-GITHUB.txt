@@ -1,0 +1,11 @@
+CoolNoobDev website — GitHub Pages upload
+
+These files are for the root of the coolnoobdev-site repository.
+
+1. Extract this ZIP on your computer.
+2. In GitHub, open the coolnoobdev-site repository and choose Add file > Upload files.
+3. Select all the extracted files and folders inside this package, including CNAME.
+   Do not upload the ZIP itself or the enclosing folder.
+4. Commit the changes to the main branch.
+
+Keep CNAME containing coolnoobdev.com so GitHub Pages retains the custom domain.

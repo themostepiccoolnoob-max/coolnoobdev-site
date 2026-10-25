@@ -3,47 +3,235 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111827">
-  <meta name="description" content="Roblox Studio tutorials, scripts, and game development tips from CoolNoobDev.">
-  <title>CoolNoobDev — Roblox Tutorials</title>
+  <meta name="theme-color" content="#140c25">
+  <meta name="description" content="Easy to follow Roblox scripting tutorials, scripts, and placement guides from CoolNoobDev.">
+  <title>CoolNoobDev — Roblox scripts & tutorials</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>.footer-brand,.footer-brand .brand-accent{color:#123a59}</style>
+  <style>.brand-accent{color:#fff}</style>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="CoolNoobDev home"><span class="brand-mark">CN</span><span>CoolNoob<span class="brand-accent">Dev</span></span></a>
-    <nav aria-label="Main navigation"><a href="#tutorials">Tutorials</a><a href="#about">About</a><a class="nav-button" href="https://www.youtube.com/" target="_blank" rel="noreferrer">YouTube ↗</a></nav>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="CoolNoobDev.com home"><span>CoolNoob<span class="brand-accent">Dev.com</span></span></a>
+    <nav><a href="#home" id="nav-home">Tutorials</a><a class="youtube-nav" href="https://www.youtube.com/@CoolNoobDev" target="_blank" rel="noreferrer"><img src="youtube-icon.png" alt="" aria-hidden="true">YouTube <span class="arrow">↗</span></a></nav>
   </header>
+  <main id="app">
+    <section class="hero" id="home-view">
+      <h1>What would you<br>like to <span class="gradient-text">make?</span></h1>
+      <p class="hero-copy">Find a script or model, follow the video, and put it in the right place in Studio.</p>
+      <div class="search-wrap"><span class="search-icon">⌕</span><input id="search" type="search" placeholder="Search by name, topic, or keyword…" aria-label="Search tutorials"><kbd>/</kbd></div>
+      <div class="section-heading"><div><h2>Roblox tutorials</h2></div></div>
+      <p class="search-empty hidden" id="search-empty" role="status">No tutorials match that search. <button id="clear-search" type="button">Clear search</button></p>
+      <button class="tutorial-card" data-tutorial="sprint" data-year="2026" type="button">
+        <span class="card-visual"><img src="sprint-animations-thumbnail.png" alt="Custom Sprint Animations tutorial thumbnail"><span class="play-dot">▶</span></span>
+        <span class="card-content"><span class="card-tag"><span class="tag-dot"></span> MOVEMENT</span><strong>How to Make Custom Sprint Animations</strong><span class="card-description">Add your own movement animations and set up sprinting in Roblox.</span><span class="card-bottom"><span>▶ &nbsp;Watch the tutorial</span><span class="card-arrow">↗</span></span></span>
+      </button>
+      <button class="tutorial-card" data-tutorial="crouch" data-year="2026" type="button">
+        <span class="card-visual"><img src="crouch-system-thumbnail.png" alt="Custom Crouch System tutorial thumbnail"><span class="play-dot">▶</span></span>
+        <span class="card-content"><span class="card-tag"><span class="tag-dot"></span> PLAYER MOVEMENT</span><strong>How to Make a Crouch System</strong><span class="card-description">Get the R6 and R15 crouch system model and follow along with the video.</span><span class="card-bottom"><span>▶ &nbsp;Open tutorial</span><span class="card-arrow">↗</span></span></span>
+      </button>
+      <button class="tutorial-card" data-tutorial="daynight" data-year="2026" type="button">
+        <span class="card-visual"><img src="day-night-cycle-thumbnail.png" alt="Day and Night Cycle tutorial thumbnail"><span class="play-dot">▶</span></span>
+        <span class="card-content"><span class="card-tag"><span class="tag-dot"></span> LIGHTING</span><strong>How to Make a Day and Night Cycle</strong><span class="card-description">Add a smooth five-minute day and night cycle to your Roblox game.</span><span class="card-bottom"><span>▶ &nbsp;Open tutorial</span><span class="card-arrow">↗</span></span></span>
+      </button>
+      <button class="tutorial-card" data-tutorial="redeem" data-year="2026" type="button">
+        <span class="card-visual"><img src="redeem-codes-thumbnail.png" alt="Redeem Codes System tutorial thumbnail"><span class="play-dot">▶</span></span>
+        <span class="card-content"><span class="card-tag"><span class="tag-dot"></span> GAME GUI</span><strong>How to Make a Redeem Codes System</strong><span class="card-description">Get the Roblox model and follow the video to add a redeem codes system to your game.</span><span class="card-bottom"><span>▶ &nbsp;Open tutorial</span><span class="card-arrow">↗</span></span></span>
+      </button>
+      <button class="tutorial-card" data-tutorial="welcome" data-year="2026" type="button">
+        <span class="card-visual"><img src="welcome-badge-thumbnail.png" alt="Welcome Badge tutorial thumbnail"><span class="play-dot">▶</span></span>
+        <span class="card-content"><span class="card-tag"><span class="tag-dot"></span> BADGES</span><strong>How to Make a Welcome Badge</strong><span class="card-description">Award players a badge when they join your Roblox game.</span><span class="card-bottom"><span>▶ &nbsp;Open tutorial</span><span class="card-arrow">↗</span></span></span>
+      </button>
+      <button class="tutorial-card" data-tutorial="customtools" data-year="2026" type="button">
+        <span class="card-visual"><img src="custom-tool-animations-thumbnail.png" alt="Custom Tool Animations tutorial thumbnail"><span class="play-dot">▶</span></span>
+        <span class="card-content"><span class="card-tag"><span class="tag-dot"></span> ANIMATIONS</span><strong>How To Make Custom Tool Animations</strong><span class="card-description">Get the model and follow along to set up custom animations for your tools.</span><span class="card-bottom"><span>▶ &nbsp;Open tutorial</span><span class="card-arrow">↗</span></span></span>
+      </button>
+      <button class="tutorial-card" data-tutorial="objective" data-year="2026" type="button">
+        <span class="card-visual"><img src="objective-system-thumbnail.png" alt="Objective System tutorial thumbnail"><span class="play-dot">▶</span></span>
+        <span class="card-content"><span class="card-tag"><span class="tag-dot"></span> GAMEPLAY</span><strong>How To Make An Objective System</strong><span class="card-description">Get the objective system model and follow the video to add it to your game.</span><span class="card-bottom"><span>▶ &nbsp;Open tutorial</span><span class="card-arrow">↗</span></span></span>
+      </button>
+      <button class="tutorial-card" data-tutorial="sprintstamina" data-year="2026" type="button">
+        <span class="card-visual"><img src="sprint-stamina-thumbnail.png" alt="Sprint System tutorial thumbnail"><span class="play-dot">▶</span></span>
+        <span class="card-content"><span class="card-tag"><span class="tag-dot"></span> MOVEMENT</span><strong>How To Make a Customisable Sprint + Stamina System</strong><span class="card-description">Add sprinting, a stamina bar, and settings you can customise.</span><span class="card-bottom"><span>▶ &nbsp;Open tutorial</span><span class="card-arrow">↗</span></span></span>
+      </button>
+      <button class="tutorial-card" data-tutorial="custommenu" data-year="2026" type="button">
+        <span class="card-visual"><img src="customisable-main-menu-thumbnail.png" alt="Customisable Main Menu tutorial thumbnail"><span class="play-dot">▶</span></span>
+        <span class="card-content"><span class="card-tag"><span class="tag-dot"></span> USER INTERFACE</span><strong>How To Make a Customisable Main Menu</strong><span class="card-description">Get the model and follow along to add a customisable main menu to your game.</span><span class="card-bottom"><span>▶ &nbsp;Open tutorial</span><span class="card-arrow">↗</span></span></span>
+      </button>
+      <button class="tutorial-card" data-tutorial="enemynpc" data-year="2026" type="button">
+        <span class="card-visual"><img src="enemy-npc-thumbnail.png" alt="Enemy NPC tutorial thumbnail"><span class="play-dot">▶</span></span>
+        <span class="card-content"><span class="card-tag"><span class="tag-dot"></span> NPC ENEMY</span><strong>How To Make an Enemy NPC</strong><span class="card-description">Get the enemy NPC model and follow the video to add an enemy to your game.</span><span class="card-bottom"><span>▶ &nbsp;Open tutorial</span><span class="card-arrow">↗</span></span></span>
+      </button>
+      <button class="tutorial-card" data-tutorial="gamepasstool" data-year="2026" type="button">
+        <span class="card-visual"><img src="gamepass-tool-thumbnail.png" alt="Gamepass Tool tutorial thumbnail"><span class="play-dot">▶</span></span>
+        <span class="card-content"><span class="card-tag"><span class="tag-dot"></span> GAMEPASSES</span><strong>How To Make A Gamepass Give A Tool</strong><span class="card-description">Set up a gamepass purchase button and give buyers a tool.</span><span class="card-bottom"><span>▶ &nbsp;Open tutorial</span><span class="card-arrow">↗</span></span></span>
+      </button>
+      <button class="tutorial-card" data-tutorial="mobilegui" data-year="2026" type="button">
+        <span class="card-visual"><img src="mobile-gui-thumbnail.png" alt="How To Fix Your Mobile GUI tutorial thumbnail"><span class="play-dot">▶</span></span>
+        <span class="card-content"><span class="card-tag"><span class="tag-dot"></span> USER INTERFACE</span><strong>How To Fix Your Mobile GUI</strong><span class="card-description">Use the AutoScale Lite plugin to help your interface fit mobile screens.</span><span class="card-bottom"><span>▶ &nbsp;Open tutorial</span><span class="card-arrow">↗</span></span></span>
+      </button>
+      <button class="tutorial-card" data-tutorial="customanimations" data-year="2026" type="button">
+        <span class="card-visual"><img src="custom-roblox-animations-thumbnail.png" alt="Custom Roblox Animations tutorial thumbnail"><span class="play-dot">▶</span></span>
+        <span class="card-content"><span class="card-tag"><span class="tag-dot"></span> ANIMATIONS</span><strong>How To Make Custom Roblox Animations</strong><span class="card-description">Copy the script, get the mobile-supported model, and follow the video to add custom animations.</span><span class="card-bottom"><span>▶ &nbsp;Open tutorial</span><span class="card-arrow">↗</span></span></span>
+      </button>
+      <button class="tutorial-card" data-tutorial="sprintshiftctrl" data-year="2026" type="button">
+        <span class="card-visual"><img src="custom-sprint-shift-ctrl-thumbnail.png" alt="Custom Sprint Animations Shift and Ctrl tutorial thumbnail"><span class="play-dot">▶</span></span>
+        <span class="card-content"><span class="card-tag"><span class="tag-dot"></span> MOVEMENT</span><strong>How To Make Custom Sprint Animations (Shift / Ctrl)</strong><span class="card-description">Use Shift or Ctrl to sprint, with custom idle, walk, sprint, and jump animations.</span><span class="card-bottom"><span>▶ &nbsp;Open tutorial</span><span class="card-arrow">↗</span></span></span>
+      </button>
+    </section>
 
-  <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="pulse"></span> ROBLOX STUDIO • SCRIPTS • GAME DEV</p>
-        <h1>Make your next<br><span>Roblox idea real.</span></h1>
-        <p class="hero-text">Easy-to-follow tutorials, useful scripts, and ideas to help you build better Roblox games.</p>
-        <div class="hero-actions"><a class="button button-primary" href="#tutorials">Explore tutorials <span>↓</span></a><a class="button button-quiet" href="https://www.youtube.com/" target="_blank" rel="noreferrer">Watch on YouTube ↗</a></div>
-        <div class="hero-note"><span class="note-icon">✦</span><span>Built for creators learning Roblox Studio</span></div>
+    <section class="tutorial-view hidden" id="sprint-tutorial">
+      <button class="back-link" data-back-home type="button"><span>←</span> All tutorials</button>
+      <div class="tutorial-heading"><h1>How to Make Custom<br><span class="gradient-text">Sprint Animations</span></h1><p>Set up custom idle, walk, sprint and jump animations, with optional sprint and stamina settings.</p></div>
+      <div class="placement-note"><span class="note-icon">⌘</span><div><strong>Put this script here</strong><span>In Roblox Studio, add a <b>LocalScript</b> to <b>StarterPlayer → StarterCharacterScripts</b>.</span></div><span class="path-chip">StarterCharacterScripts</span></div>
+      <div class="code-panel">
+        <div class="code-toolbar"><div class="file-title"><span class="file-icon">LUA</span><span>CustomSprintAnimations.lua</span><span class="file-meta">652 lines</span></div><div class="code-actions"><a class="download-btn" href="custom-sprint-animations.lua" download>↓ <span>Download</span></a><button class="copy-btn" id="copy-script" type="button"><img class="copy-icon" src="copy-icon.png" alt="" aria-hidden="true"> Copy script</button></div></div>
+        <pre class="code-scroll"><code id="script-code">Loading script…</code></pre>
+        <div class="code-footer"><span><i></i> Luau script</span><span>Click copy, then paste into your LocalScript</span></div>
       </div>
-      <div class="hero-art" aria-label="Decorative Roblox-inspired blocks">
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <div class="block block-blue"></div><div class="block block-yellow"></div><div class="block block-purple"></div>
-        <div class="code-card"><div class="code-top"><i></i><i></i><i></i><span>Roblox Studio</span></div><div class="code-lines"><b>local</b> sprintSpeed = <em>24</em><br><b>humanoid</b>.WalkSpeed = sprintSpeed<br><small>-- make something awesome</small></div></div>
-        <div class="art-caption">YOUR NEXT BUILD STARTS HERE <span>↗</span></div>
+      <section class="video-card"><div class="video-icon youtube-icon"><img src="youtube-icon.png" alt="" aria-hidden="true"></div><div class="video-text"><span class="section-kicker">FOLLOW ALONG</span><h2>Watch the video tutorial</h2><p>See how the script works and where to put it in Roblox Studio.</p></div><a class="video-link" href="https://www.youtube.com/watch?v=nUwEYUgTfiU&t=8s" target="_blank" rel="noreferrer"><img class="action-icon" src="youtube-icon.png" alt="" aria-hidden="true">Watch on YouTube <span>↗</span></a></section>
+    </section>
+
+    <section class="tutorial-view hidden" id="daynight-tutorial">
+      <button class="back-link" data-back-home type="button"><span>←</span> All tutorials</button>
+      <div class="tutorial-heading"><h1>How to Make a Day and Night<br><span class="gradient-text">Cycle</span></h1><p>Make the in-game clock move through a full day in five minutes. Change the settings at the top of the script to customise it.</p></div>
+      <div class="placement-note"><span class="note-icon">☼</span><div><strong>Put this script here</strong><span>In Roblox Studio, add a normal <b>Script</b> to <b>ServerScriptService</b>.</span></div><span class="path-chip">ServerScriptService</span></div>
+      <div class="code-panel">
+        <div class="code-toolbar"><div class="file-title"><span class="file-icon">LUA</span><span>DayAndNightCycle.lua</span></div><div class="code-actions"><a class="download-btn" href="day-night-cycle.lua" download>↓ <span>Download</span></a><button class="copy-btn" id="copy-daynight" type="button"><img class="copy-icon" src="copy-icon.png" alt="" aria-hidden="true"> Copy script</button></div></div>
+        <pre class="code-scroll"><code id="daynight-code">Loading script…</code></pre>
+        <div class="code-footer"><span><i></i> Luau script</span><span>Change FULL_DAY_LENGTH to set how long a day lasts</span></div>
+      </div>
+      <section class="video-card"><div class="video-icon youtube-icon"><img src="youtube-icon.png" alt="" aria-hidden="true"></div><div class="video-text"><span class="section-kicker">FOLLOW ALONG</span><h2>Watch the video tutorial</h2><p>See how to add the cycle to your Roblox Studio game.</p></div><a class="video-link" href="https://www.youtube.com/watch?v=CMOUt1fCdS8" target="_blank" rel="noreferrer"><img class="action-icon" src="youtube-icon.png" alt="" aria-hidden="true">Watch on YouTube <span>↗</span></a></section>
+    </section>
+
+    <section class="tutorial-view hidden" id="redeem-tutorial">
+      <button class="back-link" data-back-home type="button"><span>←</span> All tutorials</button>
+      <div class="tutorial-heading"><h1>How to Make a<br><span class="gradient-text">Redeem Codes System</span></h1><p>Add a redeem codes system to your Roblox game using the model from the Creator Store.</p></div>
+      <div class="placement-note"><span class="note-icon">⌘</span><div><strong>Get the Roblox model</strong><span>Open the model page and click <b>Get Model</b>. Then add it to your experience in Studio and follow the video.</span></div><span class="path-chip">Creator Store</span></div>
+      <section class="video-card"><div class="video-icon model-icon roblox-icon" aria-hidden="true"><img src="roblox-icon.png" alt=""></div><div class="video-text"><span class="section-kicker">ROBLOX MODEL</span><h2>Redeem Codes System</h2><p>Get the model used in this tutorial from the Roblox Creator Store.</p></div><a class="video-link" href="https://create.roblox.com/store/asset/108817623792750/Redeem-Codes-System" target="_blank" rel="noreferrer"><span class="action-icon model-glyph" aria-hidden="true"><img src="roblox-icon.png" alt=""></span>Get the model <span>↗</span></a></section>
+      <section class="video-card"><div class="video-icon youtube-icon"><img src="youtube-icon.png" alt="" aria-hidden="true"></div><div class="video-text"><span class="section-kicker">FOLLOW ALONG</span><h2>Watch the video tutorial</h2><p>See how to set up the redeem codes system in Roblox Studio.</p></div><a class="video-link" href="https://www.youtube.com/watch?v=v-OlPJW0HeQ" target="_blank" rel="noreferrer"><img class="action-icon" src="youtube-icon.png" alt="" aria-hidden="true">Watch on YouTube <span>↗</span></a></section>
+    </section>
+
+    <section class="tutorial-view hidden" id="welcome-tutorial">
+      <button class="back-link" data-back-home type="button"><span>←</span> All tutorials</button>
+      <div class="tutorial-heading"><h1>How to Make a<br><span class="gradient-text">Welcome Badge</span></h1><p>Award a badge to players when they join your experience.</p></div>
+      <div class="placement-note"><span class="note-icon">★</span><div><strong>Put this script here</strong><span>Add a server <b>Script</b> to <b>ServerScriptService</b>. Replace the placeholder with your badge ID and make sure the badge is enabled.</span></div><span class="path-chip">ServerScriptService</span></div>
+      <div class="code-panel">
+        <div class="code-toolbar"><div class="file-title"><span class="file-icon">LUA</span><span>WelcomeBadge.lua</span></div><div class="code-actions"><a class="download-btn" href="welcome-badge.lua" download>↓ <span>Download</span></a><button class="copy-btn" id="copy-welcome" type="button"><img class="copy-icon" src="copy-icon.png" alt="" aria-hidden="true"> Copy script</button></div></div>
+        <pre class="code-scroll"><code id="welcome-code">Loading script…</code></pre>
+        <div class="code-footer"><span><i></i> Luau script</span><span>Replace BADGE_ID with your badge ID</span></div>
+      </div>
+      <section class="video-card"><div class="video-icon youtube-icon"><img src="youtube-icon.png" alt="" aria-hidden="true"></div><div class="video-text"><span class="section-kicker">FOLLOW ALONG</span><h2>Watch the video tutorial</h2><p>See how to set up the welcome badge in Roblox Studio.</p></div><a class="video-link" href="https://www.youtube.com/watch?v=5hywtuMFl8o" target="_blank" rel="noreferrer"><img class="action-icon" src="youtube-icon.png" alt="" aria-hidden="true">Watch on YouTube <span>↗</span></a></section>
+    </section>
+
+    <section class="tutorial-view hidden" id="customtools-tutorial">
+      <button class="back-link" data-back-home type="button"><span>←</span> All tutorials</button>
+      <div class="tutorial-heading"><h1>How To Make Custom<br><span class="gradient-text">Tool Animations</span></h1><p>Use the Roblox model and video to set up custom animations for tools in your experience.</p></div>
+      <div class="placement-note"><span class="note-icon">◈</span><div><strong>Get the Roblox model</strong><span>Open the model page and click <b>Get Model</b>. Add it to your experience in Studio, then follow the video.</span></div><span class="path-chip">Creator Store</span></div>
+      <section class="video-card"><div class="video-icon model-icon roblox-icon" aria-hidden="true"><img src="roblox-icon.png" alt=""></div><div class="video-text"><span class="section-kicker">ROBLOX MODEL</span><h2>Custom Tool Animations</h2><p>Get the model used in this tutorial from the Roblox Creator Store.</p></div><a class="video-link" href="https://create.roblox.com/store/asset/110684001097969/Custom-Tool-Animations" target="_blank" rel="noreferrer"><span class="action-icon model-glyph" aria-hidden="true"><img src="roblox-icon.png" alt=""></span>Get the model <span>↗</span></a></section>
+      <section class="video-card"><div class="video-icon youtube-icon"><img src="youtube-icon.png" alt="" aria-hidden="true"></div><div class="video-text"><span class="section-kicker">FOLLOW ALONG</span><h2>Watch the video tutorial</h2><p>See how to set up custom tool animations.</p></div><a class="video-link" href="https://www.youtube.com/watch?v=zr9Qhfkmlbo" target="_blank" rel="noreferrer"><img class="action-icon" src="youtube-icon.png" alt="" aria-hidden="true">Watch on YouTube <span>↗</span></a></section>
+    </section>
+
+    <section class="tutorial-view hidden" id="objective-tutorial">
+      <button class="back-link" data-back-home type="button"><span>←</span> All tutorials</button>
+      <div class="tutorial-heading"><h1>How To Make An<br><span class="gradient-text">Objective System</span></h1><p>Use the ready-made objective system model, then follow the video to add it to your experience.</p></div>
+      <div class="placement-note"><span class="note-icon">◈</span><div><strong>Get the Roblox model</strong><span>Open the model page and click <b>Get Model</b>. Add it to your experience in Studio, then follow the video.</span></div><span class="path-chip">Creator Store</span></div>
+      <section class="video-card"><div class="video-icon model-icon roblox-icon" aria-hidden="true"><img src="roblox-icon.png" alt=""></div><div class="video-text"><span class="section-kicker">ROBLOX MODEL</span><h2>Objective System</h2><p>Get the model used in this tutorial from the Roblox Creator Store.</p></div><a class="video-link" href="https://create.roblox.com/store/asset/78747483804958/Objective-System" target="_blank" rel="noreferrer"><span class="action-icon model-glyph" aria-hidden="true"><img src="roblox-icon.png" alt=""></span>Get the model <span>↗</span></a></section>
+      <section class="video-card"><div class="video-icon youtube-icon"><img src="youtube-icon.png" alt="" aria-hidden="true"></div><div class="video-text"><span class="section-kicker">FOLLOW ALONG</span><h2>Watch the video tutorial</h2><p>See how to add an objective system to your Roblox experience.</p></div><a class="video-link" href="https://www.youtube.com/watch?v=CuoF87nw4U8" target="_blank" rel="noreferrer"><img class="action-icon" src="youtube-icon.png" alt="" aria-hidden="true">Watch on YouTube <span>↗</span></a></section>
+    </section>
+
+    <section class="tutorial-view hidden" id="sprintstamina-tutorial">
+      <button class="back-link" data-back-home type="button"><span>←</span> All tutorials</button>
+      <div class="tutorial-heading"><h1>How To Make a Customisable<br><span class="gradient-text">Sprint + Stamina System</span></h1><p>Add sprinting with Left Shift, a stamina bar, and settings for movement speed and stamina recovery.</p></div>
+      <div class="placement-note"><span class="note-icon">⌘</span><div><strong>Put this script here</strong><span>Add a <b>LocalScript</b> to <b>StarterPlayer → StarterCharacterScripts</b>.</span></div><span class="path-chip">StarterCharacterScripts</span></div>
+      <div class="code-panel">
+        <div class="code-toolbar"><div class="file-title"><span class="file-icon">LUA</span><span>SprintStamina.lua</span></div><div class="code-actions"><a class="download-btn" href="sprint-stamina.lua" download>↓ <span>Download</span></a><button class="copy-btn" id="copy-sprintstamina" type="button"><img class="copy-icon" src="copy-icon.png" alt="" aria-hidden="true"> Copy script</button></div></div>
+        <pre class="code-scroll"><code id="sprintstamina-code">Loading script…</code></pre>
+        <div class="code-footer"><span><i></i> Luau script</span><span>Change the settings at the top to customise it</span></div>
+      </div>
+      <section class="video-card"><div class="video-icon youtube-icon"><img src="youtube-icon.png" alt="" aria-hidden="true"></div><div class="video-text"><span class="section-kicker">FOLLOW ALONG</span><h2>Watch the video tutorial</h2><p>See how to set up sprinting and stamina.</p></div><a class="video-link" href="https://www.youtube.com/watch?v=BlnZ_JCnN6w" target="_blank" rel="noreferrer"><img class="action-icon" src="youtube-icon.png" alt="" aria-hidden="true">Watch on YouTube <span>↗</span></a></section>
+    </section>
+
+    <section class="tutorial-view hidden" id="custommenu-tutorial">
+      <button class="back-link" data-back-home type="button"><span>←</span> All tutorials</button>
+      <div class="tutorial-heading"><h1>How To Make a<br><span class="gradient-text">Customisable Main Menu</span></h1><p>Use the ready-made main menu model, then follow the video to customise it for your experience.</p></div>
+      <div class="placement-note"><span class="note-icon">◈</span><div><strong>Get the Roblox model</strong><span>Open the model page and click <b>Get Model</b>. Add it to your experience in Studio, then follow the video.</span></div><span class="path-chip">Creator Store</span></div>
+      <section class="video-card"><div class="video-icon model-icon roblox-icon" aria-hidden="true"><img src="roblox-icon.png" alt=""></div><div class="video-text"><span class="section-kicker">ROBLOX MODEL</span><h2>Main Menu GUI</h2><p>Get the model used in this tutorial from the Roblox Creator Store.</p></div><a class="video-link" href="https://create.roblox.com/store/asset/111550804842271/MainMenuGui" target="_blank" rel="noreferrer"><span class="action-icon model-glyph" aria-hidden="true"><img src="roblox-icon.png" alt=""></span>Get the model <span>↗</span></a></section>
+      <section class="video-card"><div class="video-icon youtube-icon"><img src="youtube-icon.png" alt="" aria-hidden="true"></div><div class="video-text"><span class="section-kicker">FOLLOW ALONG</span><h2>Watch the video tutorial</h2><p>See how to set up and customise your main menu.</p></div><a class="video-link" href="https://www.youtube.com/watch?v=S1lBsT887jI" target="_blank" rel="noreferrer"><img class="action-icon" src="youtube-icon.png" alt="" aria-hidden="true">Watch on YouTube <span>↗</span></a></section>
+    </section>
+
+    <section class="tutorial-view hidden" id="enemynpc-tutorial">
+      <button class="back-link" data-back-home type="button"><span>←</span> All tutorials</button>
+      <div class="tutorial-heading"><h1>How To Make an<br><span class="gradient-text">Enemy NPC</span></h1><p>Use the ready-made enemy NPC model, then follow the video to add it to your experience.</p></div>
+      <div class="placement-note"><span class="note-icon">◈</span><div><strong>Get the Roblox model</strong><span>Open the model page and click <b>Get Model</b>. Add it to your experience in Studio, then follow the video.</span></div><span class="path-chip">Creator Store</span></div>
+      <section class="video-card"><div class="video-icon model-icon roblox-icon" aria-hidden="true"><img src="roblox-icon.png" alt=""></div><div class="video-text"><span class="section-kicker">ROBLOX MODEL</span><h2>Advanced Enemy NPC</h2><p>Get the model used in this tutorial from the Roblox Creator Store.</p></div><a class="video-link" href="https://create.roblox.com/store/asset/87048613373206/Advanced-Enemy-NPC" target="_blank" rel="noreferrer"><span class="action-icon model-glyph" aria-hidden="true"><img src="roblox-icon.png" alt=""></span>Get the model <span>↗</span></a></section>
+      <section class="video-card"><div class="video-icon youtube-icon"><img src="youtube-icon.png" alt="" aria-hidden="true"></div><div class="video-text"><span class="section-kicker">FOLLOW ALONG</span><h2>Watch the video tutorial</h2><p>See how to add an enemy NPC to your game.</p></div><a class="video-link" href="https://www.youtube.com/watch?v=JLaPkB_H6O8" target="_blank" rel="noreferrer"><img class="action-icon" src="youtube-icon.png" alt="" aria-hidden="true">Watch on YouTube <span>↗</span></a></section>
+    </section>
+
+    <section class="tutorial-view hidden" id="gamepasstool-tutorial">
+      <button class="back-link" data-back-home type="button"><span>←</span> All tutorials</button>
+      <div class="tutorial-heading"><h1>How To Make A<br><span class="gradient-text">Gamepass Give A Tool</span></h1><p>Use one LocalScript to prompt the purchase and one server Script to give the tool to gamepass owners.</p></div>
+      <div class="placement-note"><span class="note-icon">⌘</span><div><strong>Set up the objects first</strong><span>Put the tool in <b>ServerStorage</b>. Put the LocalScript inside the purchase button, and put the server Script in <b>ServerScriptService</b>. Set the same gamepass ID in both scripts.</span></div><span class="path-chip">2 scripts</span></div>
+      <div class="code-panel">
+        <div class="code-toolbar"><div class="file-title"><span class="file-icon">LOCAL</span><span>GamepassButton.client.lua</span></div><div class="code-actions"><a class="download-btn" href="gamepass-tool-client.lua" download>↓ <span>Download</span></a><button class="copy-btn" id="copy-gamepass-client" type="button"><img class="copy-icon" src="copy-icon.png" alt="" aria-hidden="true"> Copy script</button></div></div>
+        <pre class="code-scroll"><code id="gamepass-client-code">Loading script…</code></pre>
+        <div class="code-footer"><span><i></i> LocalScript</span><span>Place inside the purchase button</span></div>
+      </div>
+      <div class="code-panel" style="margin-top:16px">
+        <div class="code-toolbar"><div class="file-title"><span class="file-icon">SERVER</span><span>GamepassTool.server.lua</span></div><div class="code-actions"><a class="download-btn" href="gamepass-tool-server.lua" download>↓ <span>Download</span></a><button class="copy-btn" id="copy-gamepass-server" type="button"><img class="copy-icon" src="copy-icon.png" alt="" aria-hidden="true"> Copy script</button></div></div>
+        <pre class="code-scroll"><code id="gamepass-server-code">Loading script…</code></pre>
+        <div class="code-footer"><span><i></i> Script</span><span>Place inside ServerScriptService</span></div>
       </div>
     </section>
 
-    <section class="section tutorials" id="tutorials">
-      <div class="section-heading"><div><p class="eyebrow">LEARN BY BUILDING</p><h2>Latest tutorials</h2></div><span class="heading-count">01 — 03</span></div>
-      <div class="tutorial-grid">
-        <a class="tutorial-card featured" href="sprint-animations.html"><div class="card-visual visual-sprint"><span class="visual-tag">MOVEMENT SYSTEM</span><div class="speed-lines"><i></i><i></i><i></i></div><div class="runner">◢</div><div class="keycap">SHIFT</div></div><div class="card-content"><div class="card-meta"><span>ROBLOX STUDIO</span><span>•</span><span>ANIMATION</span></div><h3>Custom Sprint Animations</h3><p>Make a sprint system with custom animations and Shift or Ctrl controls.</p><span class="card-link">View tutorial <b>↗</b></span></div></a>
-        <article class="tutorial-card coming"><div class="card-visual visual-code"><span class="visual-tag">COMING SOON</span><div class="mini-code">if player then<br>&nbsp; makeGame()<br>end</div><span class="spark">✳</span></div><div class="card-content"><div class="card-meta"><span>ROBLOX STUDIO</span><span>•</span><span>SCRIPTS</span></div><h3>More tutorials soon</h3><p>New guides and scripts will be added here as they’re ready.</p><span class="card-link muted">Stay tuned <b>↗</b></span></div></article>
-        <article class="tutorial-card coming"><div class="card-visual visual-build"><span class="visual-tag">IN THE WORKS</span><div class="build-cube"><i></i><i></i><i></i></div><span class="build-label">CREATE<br>YOUR WORLD</span></div><div class="card-content"><div class="card-meta"><span>GAME DEV</span><span>•</span><span>IDEAS</span></div><h3>Build something cool</h3><p>Practical tips to take your Roblox projects from idea to playable.</p><span class="card-link muted">More coming <b>↗</b></span></div></article>
-      </div>
+
+    <section class="tutorial-view hidden" id="mobilegui-tutorial">
+      <button class="back-link" data-back-home type="button"><span>←</span> All tutorials</button>
+      <div class="tutorial-heading"><h1>How To Fix Your<br><span class="gradient-text">Mobile GUI</span></h1><p>Use the AutoScale Lite plugin to help adjust your Roblox interface for mobile screens, following along with the video.</p></div>
+      <div class="placement-note"><span class="note-icon">◈</span><div><strong>Install the plugin in Roblox Studio</strong><span>Open the AutoScale Lite page and click <b>Get Plugin</b>. Then follow the video to use it on your interface.</span></div><span class="path-chip">Plugin</span></div>
+      <section class="video-card"><div class="video-icon model-icon roblox-icon" aria-hidden="true"><img src="roblox-icon.png" alt=""></div><div class="video-text"><span class="section-kicker">ROBLOX PLUGIN</span><h2>AutoScale Lite</h2><p>Get the plugin used in this tutorial from the Creator Store.</p></div><a class="video-link" href="https://create.roblox.com/store/asset/1496745047/AutoScale-Lite" target="_blank" rel="noreferrer"><span class="action-icon model-glyph" aria-hidden="true"><img src="roblox-icon.png" alt=""></span>Get the plugin <span>↗</span></a></section>
+      <section class="video-card"><div class="video-icon youtube-icon"><img src="youtube-icon.png" alt="" aria-hidden="true"></div><div class="video-text"><span class="section-kicker">FOLLOW ALONG</span><h2>Watch the video tutorial</h2><p>See how to use AutoScale Lite to fix a mobile GUI.</p></div><a class="video-link" href="https://www.youtube.com/watch?v=jm-cHOMdC8w" target="_blank" rel="noreferrer"><img class="action-icon" src="youtube-icon.png" alt="" aria-hidden="true">Watch on YouTube <span>↗</span></a></section>
     </section>
 
-    <section class="about-band" id="about"><div class="about-symbol">CN<span>.</span></div><div><p class="eyebrow">ABOUT COOLNOOBDEV</p><h2>Learn it. Build it. Make it yours.</h2><p>CoolNoobDev shares Roblox Studio tutorials and game development resources made for creators who want to keep learning.</p></div><a class="button button-outline" href="https://www.youtube.com/" target="_blank" rel="noreferrer">Visit the channel ↗</a></section>
+    <section class="tutorial-view hidden" id="crouch-tutorial">
+      <button class="back-link" data-back-home type="button"><span>←</span> All tutorials</button>
+      <div class="tutorial-heading"><h1>How to Make a Crouch<br><span class="gradient-text">System</span></h1><p>Use the ready-made crouch system model, then follow the video to add it to your Roblox experience.</p></div>
+      <div class="placement-note"><span class="note-icon">◈</span><div><strong>Get the Roblox model</strong><span>Open the model page and click <b>Get Model</b>. Then add it to your experience in Studio.</span></div><span class="path-chip">R6 + R15</span></div>
+      <section class="video-card"><div class="video-icon model-icon roblox-icon" aria-hidden="true"><img src="roblox-icon.png" alt=""></div><div class="video-text"><span class="section-kicker">ROBLOX MODEL</span><h2>Crouch R6/R15</h2><p>Get the model used in this tutorial from the Roblox Creator Store.</p></div><a class="video-link" href="https://create.roblox.com/store/asset/96828015749436/Crouch-R6R15" target="_blank" rel="noreferrer"><span class="action-icon model-glyph" aria-hidden="true"><img src="roblox-icon.png" alt=""></span>Get the model <span>↗</span></a></section>
+      <section class="video-card"><div class="video-icon youtube-icon"><img src="youtube-icon.png" alt="" aria-hidden="true"></div><div class="video-text"><span class="section-kicker">FOLLOW ALONG</span><h2>Watch the video tutorial</h2><p>See how to use the crouch system in Roblox Studio.</p></div><a class="video-link" href="https://www.youtube.com/watch?v=oj-Vvf9nGAk" target="_blank" rel="noreferrer"><img class="action-icon" src="youtube-icon.png" alt="" aria-hidden="true">Watch on YouTube <span>↗</span></a></section>
+    </section>
+
+    <section class="tutorial-view hidden" id="customanimations-tutorial">
+      <button class="back-link" data-back-home type="button"><span>←</span> All tutorials</button>
+      <div class="tutorial-heading"><h1>How To Make Custom Roblox<br><span class="gradient-text">Animations</span></h1><p>Use the script with the mobile-supported model to set custom idle, walk, and jump animations.</p></div>
+      <div class="placement-note"><span class="note-icon">⌘</span><div><strong>Put this script here</strong><span>Add a <b>LocalScript</b> to <b>StarterPlayer → StarterCharacterScripts</b>, then replace the animation IDs.</span></div><span class="path-chip">StarterCharacterScripts</span></div>
+      <div class="code-panel">
+        <div class="code-toolbar"><div class="file-title"><span class="file-icon">LUA</span><span>CustomRobloxAnimations.lua</span></div><div class="code-actions"><a class="download-btn" href="custom-roblox-animations.lua" download>↓ <span>Download</span></a><button class="copy-btn" id="copy-customanimations" type="button"><img class="copy-icon" src="copy-icon.png" alt="" aria-hidden="true"> Copy script</button></div></div>
+        <pre class="code-scroll"><code id="customanimations-code">Loading script…</code></pre>
+        <div class="code-footer"><span><i></i> Luau script</span><span>Replace each animation ID with your own</span></div>
+      </div>
+      <section class="video-card"><div class="video-icon model-icon roblox-icon" aria-hidden="true"><img src="roblox-icon.png" alt=""></div><div class="video-text"><span class="section-kicker">ROBLOX MODEL</span><h2>Custom Animations System (Mobile Supported)</h2><p>Get the model used in this tutorial from the Roblox Creator Store.</p></div><a class="video-link" href="https://create.roblox.com/store/asset/106433153528592/Custom-Animations-System-Mobile-Supported" target="_blank" rel="noreferrer"><span class="action-icon model-glyph" aria-hidden="true"><img src="roblox-icon.png" alt=""></span>Get the model <span>↗</span></a></section>
+      <section class="video-card"><div class="video-icon youtube-icon"><img src="youtube-icon.png" alt="" aria-hidden="true"></div><div class="video-text"><span class="section-kicker">FOLLOW ALONG</span><h2>Watch the video tutorial</h2><p>See how to use the custom animations system in Roblox Studio.</p></div><a class="video-link" href="https://www.youtube.com/watch?v=iWSm4y8r0eI" target="_blank" rel="noreferrer"><img class="action-icon" src="youtube-icon.png" alt="" aria-hidden="true">Watch on YouTube <span>↗</span></a></section>
+    </section>
+
+    <section class="tutorial-view hidden" id="sprintshiftctrl-tutorial">
+      <button class="back-link" data-back-home type="button"><span>←</span> All tutorials</button>
+      <div class="tutorial-heading"><h1>How To Make Custom Sprint<br><span class="gradient-text">Animations</span><span class="title-note">(Shift / Ctrl)</span></h1><p>Hold Shift or Ctrl to sprint. Replace the placeholder IDs with your idle, walk, sprint, and jump animation IDs.</p></div>
+      <div class="placement-note"><span class="note-icon">⌘</span><div><strong>Put this script here</strong><span>Add a <b>LocalScript</b> to <b>StarterPlayer → StarterCharacterScripts</b>, then replace the animation IDs.</span></div><span class="path-chip">StarterCharacterScripts</span></div>
+      <div class="code-panel">
+        <div class="code-toolbar"><div class="file-title"><span class="file-icon">LUA</span><span>SprintAnimationsShiftCtrl.lua</span></div><div class="code-actions"><a class="download-btn" href="custom-sprint-animations-shift-ctrl.lua" download>↓ <span>Download</span></a><button class="copy-btn" id="copy-sprintshiftctrl" type="button"><img class="copy-icon" src="copy-icon.png" alt="" aria-hidden="true"> Copy script</button></div></div>
+        <pre class="code-scroll"><code id="sprintshiftctrl-code">Loading script…</code></pre>
+        <div class="code-footer"><span><i></i> Luau script</span><span>Change the settings and animation IDs to customise it</span></div>
+      </div>
+      <section class="video-card"><div class="video-icon youtube-icon"><img src="youtube-icon.png" alt="" aria-hidden="true"></div><div class="video-text"><span class="section-kicker">FOLLOW ALONG</span><h2>Watch the video tutorial</h2><p>See how to set up Shift and Ctrl sprinting with custom animations.</p></div><a class="video-link" href="https://www.youtube.com/watch?v=etN8k1ettWQ" target="_blank" rel="noreferrer"><img class="action-icon" src="youtube-icon.png" alt="" aria-hidden="true">Watch on YouTube <span>↗</span></a></section>
+    </section>
   </main>
-
-  <footer><a class="brand footer-brand" href="index.html"><span class="brand-mark">CN</span><span>CoolNoob<span class="brand-accent">Dev</span></span></a><span>© <span id="year">2026</span> CoolNoobDev</span><a href="mailto:hello@coolnoobdev.com">Contact ↗</a></footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <footer><a class="brand footer-brand" href="#home"><span>CoolNoob<span class="brand-accent">Dev.com</span></span></a><span>Unofficial creator tutorials · Not affiliated with or endorsed by Roblox Corporation</span><span>© <span id="year"></span> CoolNoobDev</span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite">Script copied!</div>
+  <script src="app.js"></script>
 </body>
 </html>
